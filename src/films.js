@@ -15,7 +15,8 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   let directorArray = array.filter(film => film.director === director);
   let result = directorArray.reduce((total, film) => total + film.score, 0);
-  return result / directorArray.length
+  let resultFix = result / directorArray.length;
+  return parseFloat(resultFix.toFixed(2));
 }
 
 // Exercise 4:  Alphabetic order by title 
@@ -41,7 +42,8 @@ function orderByYear(array) {
 function moviesAverageByCategory(array, genre) {
   let genreArray = array.filter(film => film.genre.includes(genre));
   let result = genreArray.reduce((total, film) => total + film.score, 0);
-  return result / genreArray.length
+  let resultFix = result / genreArray.length;
+  return parseFloat(resultFix.toFixed(2))
 }
 
 // Exercise 7: Modify the duration of movies to minutes
